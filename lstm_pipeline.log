@@ -1,0 +1,13 @@
+2026-08-14 06:52:26,006 | INFO | LSTM notebook started
+2026-08-14 06:52:32,188 | INFO | Store 1 time series: 781 observations, 2013-01-02 to 2015-07-31
+2026-08-14 06:52:32,373 | INFO | Raw Sales series -> ADF stat: -5.3996, p-value: 0.0000
+2026-08-14 06:52:32,383 | INFO | Series already stationary - differencing shown for comparison only
+2026-08-14 06:52:32,396 | INFO | First-differenced Sales series -> ADF stat: -10.4935, p-value: 0.0000
+2026-08-14 06:52:32,886 | INFO | Building sliding-window dataset with lookback=14
+2026-08-14 06:52:33,078 | INFO | Train: 663 obs, Test: 118 obs, scaled to (-1, 1)
+2026-08-14 06:52:33,080 | INFO | X_train: (649, 14, 1), X_test: (118, 14, 1)
+2026-08-14 06:52:33,217 | INFO | Training LSTM model...
+2026-08-14 06:52:42,409 | INFO | Training complete
+2026-08-14 06:52:43,214 | INFO | LSTM Test MAE: 471.45, RMSE: 595.48, RMSPE: 0.1349
+2026-08-14 06:52:43,403 | INFO | LSTM model saved: lstm_14-08-2026-06-52-43-00.keras
+2026-08-14 06:52:43,405 | INFO | Scaler saved: lstm_scaler_14-08-2026-06-52-43-00.pkl

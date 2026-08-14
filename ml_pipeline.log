@@ -1,0 +1,40 @@
+2026-08-14 06:39:35,726 | INFO | ML notebook started
+2026-08-14 06:39:38,983 | INFO | train shape: (1017155, 18), test shape: (41088, 17)
+2026-08-14 06:39:40,230 | INFO | train shape after filtering Open==1: (844338, 18)
+2026-08-14 06:39:40,256 | INFO | Engineering features on train...
+2026-08-14 06:39:50,713 | INFO | Engineering features on test...
+2026-08-14 06:39:52,055 | INFO | train_fe shape: (844338, 29)
+2026-08-14 06:40:24,461 | INFO | ML notebook started
+2026-08-14 06:40:28,183 | INFO | train shape: (1017155, 18), test shape: (41088, 17)
+2026-08-14 06:40:29,681 | INFO | train shape after filtering Open==1: (844338, 18)
+2026-08-14 06:40:29,706 | INFO | Engineering features on train...
+2026-08-14 06:40:40,038 | INFO | Engineering features on test...
+2026-08-14 06:40:41,431 | INFO | train_fe shape: (844338, 30)
+2026-08-14 06:40:41,828 | INFO | Feature matrix shape: (844338, 20), target shape: (844338,)
+2026-08-14 06:40:42,160 | INFO | Validation cutoff date: 2015-06-19
+2026-08-14 06:40:43,133 | INFO | X_train: (804056, 20), X_val: (40282, 20)
+2026-08-14 06:40:43,142 | INFO | Pipeline defined
+2026-08-14 06:40:43,187 | INFO | Fitting pipeline on training data...
+2026-08-14 06:45:01,209 | INFO | Fit complete
+2026-08-14 06:45:01,614 | INFO | Validation RMSPE: 0.2425
+2026-08-14 06:45:01,615 | INFO | Validation MAE: 1057.84
+2026-08-14 06:45:01,617 | INFO | Validation RMSE: 1529.85
+2026-08-14 06:45:01,807 | INFO | Top 10 features:
+CompetitionDistance      0.244328
+Store                    0.209906
+Promo                    0.168204
+CompetitionOpenMonths    0.068110
+DayOfWeek                0.059556
+Promo2OpenWeeks          0.052818
+StoreType_b              0.031034
+WeekOfYear               0.029251
+Day                      0.022180
+Assortment_c             0.015519
+dtype: float64
+2026-08-14 06:45:01,997 | INFO | Computed 90% prediction intervals for a validation sample
+2026-08-14 06:45:02,363 | INFO | Model serialized to 14-08-2026-06-45-02-00.pkl
+2026-08-14 06:45:02,676 | INFO | Submission saved: rf_submission.csv (41088 rows)
+2026-08-14 08:06:43,561 | INFO | ML notebook started
+2026-08-14 08:06:49,699 | INFO | train shape: (1017155, 18), test shape: (41088, 17)
+2026-08-14 08:06:50,166 | INFO | train shape after filtering Open==1: (844338, 18)
+2026-08-14 08:06:50,206 | INFO | Engineering features on train...

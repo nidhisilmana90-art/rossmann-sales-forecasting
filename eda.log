@@ -1,0 +1,70 @@
+2026-08-14 06:36:01,230 | INFO | Notebook started - imports and logger ready
+2026-08-14 06:36:01,239 | INFO | Loading train, test and store datasets
+2026-08-14 06:36:03,008 | INFO | train shape: (1017209, 9)
+2026-08-14 06:36:03,010 | INFO | test shape: (41088, 8)
+2026-08-14 06:36:03,011 | INFO | store shape: (1115, 10)
+2026-08-14 06:36:03,142 | INFO | train missing values:
+Empty DataFrame
+Columns: [missing, pct]
+Index: []
+2026-08-14 06:36:03,151 | INFO | test missing values:
+      missing   pct
+Open       11  0.03
+2026-08-14 06:36:03,158 | INFO | store missing values:
+                           missing    pct
+Promo2SinceYear                544  48.79
+Promo2SinceWeek                544  48.79
+PromoInterval                  544  48.79
+CompetitionOpenSinceMonth      354  31.75
+CompetitionOpenSinceYear       354  31.75
+CompetitionDistance              3   0.27
+2026-08-14 06:36:03,170 | INFO | Rows with missing Open in test: 11
+2026-08-14 06:36:03,175 | INFO | CompetitionDistance missing: 3
+2026-08-14 06:36:03,178 | INFO | Missing value imputation complete
+2026-08-14 06:36:03,276 | INFO | Data type fixes applied
+2026-08-14 06:36:03,912 | INFO | Open-day rows: 844392 of 1017209
+2026-08-14 06:36:03,916 | INFO | Rows with Open=1 but Sales=0: 54
+2026-08-14 06:36:03,951 | INFO | IQR bounds: [-392, 13612] -> 30769 outlier rows (3.64%)
+2026-08-14 06:36:05,946 | INFO | Rows dropped (Open=1, Sales=0 data errors): 54
+2026-08-14 06:36:05,948 | INFO | Cleaned train shape: (1017155, 9)
+2026-08-14 06:36:06,043 | INFO | train_merged shape: (1017155, 18)
+2026-08-14 06:36:06,045 | INFO | test_merged shape: (41088, 17)
+2026-08-14 06:36:09,640 | INFO | Cleaned datasets saved: train_cleaned.csv, test_cleaned.csv
+2026-08-14 06:36:11,781 | INFO | Sales-Customers correlation: 0.824
+2026-08-14 06:36:13,158 | INFO | Sales vs CompetitionDistance correlation: -0.042
+2026-08-14 06:36:13,478 | INFO | Stores with a competitor opening mid-observation-window: 188
+2026-08-14 06:36:24,494 | INFO | Notebook started - imports and logger ready
+2026-08-14 06:36:24,503 | INFO | Loading train, test and store datasets
+2026-08-14 06:36:25,695 | INFO | train shape: (1017209, 9)
+2026-08-14 06:36:25,696 | INFO | test shape: (41088, 8)
+2026-08-14 06:36:25,698 | INFO | store shape: (1115, 10)
+2026-08-14 06:36:25,828 | INFO | train missing values:
+Empty DataFrame
+Columns: [missing, pct]
+Index: []
+2026-08-14 06:36:25,838 | INFO | test missing values:
+      missing   pct
+Open       11  0.03
+2026-08-14 06:36:25,846 | INFO | store missing values:
+                           missing    pct
+Promo2SinceYear                544  48.79
+Promo2SinceWeek                544  48.79
+PromoInterval                  544  48.79
+CompetitionOpenSinceMonth      354  31.75
+CompetitionOpenSinceYear       354  31.75
+CompetitionDistance              3   0.27
+2026-08-14 06:36:25,859 | INFO | Rows with missing Open in test: 11
+2026-08-14 06:36:25,862 | INFO | CompetitionDistance missing: 3
+2026-08-14 06:36:25,865 | INFO | Missing value imputation complete
+2026-08-14 06:36:25,963 | INFO | Data type fixes applied
+2026-08-14 06:36:26,619 | INFO | Open-day rows: 844392 of 1017209
+2026-08-14 06:36:26,622 | INFO | Rows with Open=1 but Sales=0: 54
+2026-08-14 06:36:26,657 | INFO | IQR bounds: [-392, 13612] -> 30769 outlier rows (3.64%)
+2026-08-14 06:36:28,653 | INFO | Rows dropped (Open=1, Sales=0 data errors): 54
+2026-08-14 06:36:28,655 | INFO | Cleaned train shape: (1017155, 9)
+2026-08-14 06:36:28,750 | INFO | train_merged shape: (1017155, 18)
+2026-08-14 06:36:28,751 | INFO | test_merged shape: (41088, 17)
+2026-08-14 06:36:32,206 | INFO | Cleaned datasets saved: train_cleaned.csv, test_cleaned.csv
+2026-08-14 06:36:34,076 | INFO | Sales-Customers correlation: 0.824
+2026-08-14 06:36:35,389 | INFO | Sales vs CompetitionDistance correlation: -0.042
+2026-08-14 06:36:35,690 | INFO | Stores with a competitor opening mid-observation-window: 188
