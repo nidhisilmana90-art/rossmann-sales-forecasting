@@ -2,10 +2,4 @@ streamlit
 pandas
 numpy
 scikit-learn
-matplotlib
-seaborn
-statsmodels
-tensorflow
-mlflow
-dvc
 joblib
