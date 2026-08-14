@@ -5,8 +5,9 @@ import pickle
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent
-sales_model = pickle.load(open(BASE / "models" / "sales_rf.pkl", "rb"))
-customers_model = pickle.load(open(BASE / "models" / "customers_rf.pkl", "rb"))
+# The trained model files are stored in the repository root.
+sales_model = pickle.load(open(BASE / "sales_rf.pkl", "rb"))
+customers_model = pickle.load(open(BASE / "customers_rf.pkl", "rb"))
 
 st.set_page_config(page_title="Rossmann Sales Forecasting", page_icon="📈", layout="wide")
 st.title("📈 Rossmann Store Sales Forecasting")
@@ -48,8 +49,6 @@ competition_distance = st.sidebar.number_input("Competition Distance (m)", min_v
 promo2 = st.sidebar.selectbox("Promo2", [0,1], index=0)
 
 uploaded = st.file_uploader("Upload prediction CSV (optional)", type=["csv"])
-required = ["Date","DayOfWeek","Promo","SchoolHoliday","StoreType","Assortment","CompetitionDistance","Promo2",
-            "CompetitionOpenSinceMonth","CompetitionOpenSinceYear","Promo2SinceWeek","Promo2SinceYear"]
 
 if uploaded:
     df = pd.read_csv(uploaded)
@@ -65,30 +64,28 @@ else:
         "Promo2SinceYear": 2013, "StateHoliday": "0"
     }])
 
-# Fill optional fields expected by the model
 defaults = {
-    "StateHoliday":"0","CompetitionOpenSinceMonth":1,"CompetitionOpenSinceYear":2013,
-    "Promo2SinceWeek":1,"Promo2SinceYear":2013
+    "StateHoliday":"0", "CompetitionOpenSinceMonth":1, "CompetitionOpenSinceYear":2013,
+    "Promo2SinceWeek":1, "Promo2SinceYear":2013
 }
-for c,v in defaults.items():
-    if c not in df.columns: df[c] = v
+for c, v in defaults.items():
+    if c not in df.columns:
+        df[c] = v
 
 if st.button("Predict Sales & Customers", type="primary"):
     try:
         sales, customers = predict(df)
         result = df[["Store","Date"]].copy()
-        result["Predicted_Sales"] = np.round(sales,2)
-        result["Predicted_Customers"] = np.round(customers,0).astype(int)
-        c1,c2 = st.columns(2)
+        result["Predicted_Sales"] = np.round(sales, 2)
+        result["Predicted_Customers"] = np.round(customers, 0).astype(int)
+        c1, c2 = st.columns(2)
         c1.metric("Predicted Sales", f"{sales[0]:,.0f}")
         c2.metric("Predicted Customers", f"{customers[0]:,.0f}")
         st.subheader("Prediction table")
         st.dataframe(result, use_container_width=True)
-        chart = result.set_index("Date")[["Predicted_Sales","Predicted_Customers"]]
+        chart = result.set_index("Date")[["Predicted_Sales", "Predicted_Customers"]]
         st.line_chart(chart)
-        st.download_button("⬇️ Download Predictions CSV",
-                           result.to_csv(index=False).encode("utf-8"),
-                           "rossmann_predictions.csv","text/csv")
+        st.download_button("⬇️ Download Predictions CSV", result.to_csv(index=False).encode("utf-8"), "rossmann_predictions.csv", "text/csv")
     except Exception as e:
         st.error(f"Prediction error: {e}")
         st.info("For uploaded files, keep the feature names compatible with the project model.")
